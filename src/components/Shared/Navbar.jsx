@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { logout, selectCurrentToken } from '../../features/auth/authSlice';
 import { selectCartItems } from '../../features/cart/cartSlice';
 import '../../styles/Navbar.css'
+import { toggleTheme } from '../../features/theme/themeSlice';
 
 const Navbar = () => {
   const token = useSelector(selectCurrentToken);
@@ -14,14 +15,20 @@ const Navbar = () => {
     dispatch(logout());
   };
 
+  const theme = useSelector((state) => state.theme.mode);
+
+  const handleToggleTheme = () => {
+    dispatch(toggleTheme());
+  };
+
   return (
     <nav className="navbar">
       <div className="container">
         <Link to="/" className="navbar-brand">Ecommerce</Link>
-        
+
         <div className="navbar-links">
           <Link to="/products">Products</Link>
-          
+
           {token ? (
             <>
               <Link to="/cart">
@@ -35,10 +42,18 @@ const Navbar = () => {
               <Link to="/register">Register</Link>
             </>
           )}
+          
+          <button onClick={handleToggleTheme} className="theme-toggle">
+            {theme === 'light' ? '🌙 Dark' : '☀️ Light'}
+          </button>
+
         </div>
       </div>
     </nav>
   );
+
+
+
 };
 
 export default Navbar;

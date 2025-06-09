@@ -7,7 +7,6 @@ import { selectCurrentToken } from '../../features/auth/authSlice';
 const ProductCard = ({ product }) => {
   const dispatch = useDispatch();
   const token = useSelector(selectCurrentToken);
-
   const handleAddToCart = () => {
     dispatch(addToCart(product));
   };
