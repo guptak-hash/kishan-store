@@ -34,7 +34,7 @@ const HomePage = () => {
       <section className="hero">
         <h1>Welcome to ShopEase</h1>
         <p>Discover quality products at unbeatable prices.</p>
-        <button className="shop-btn">Explore Now</button>
+        {/* <button className="shop-btn">Explore Now</button> */}
       </section>
 
       <section className="featured">
