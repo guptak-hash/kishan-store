@@ -43,10 +43,7 @@ const Navbar = () => {
             </>
           )}
           
-          {/* <button onClick={handleToggleTheme} className="theme-toggle">
-            {theme === 'light' ? '🌙 Dark' : '☀️ Light'}
-          </button> */}
-
+        
         </div>
       </div>
     </nav>
